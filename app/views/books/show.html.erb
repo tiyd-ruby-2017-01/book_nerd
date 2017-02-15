@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @book.title %>
+  <br>
+
+  <% if @book.authors.count > 0 %>
+    <p>Authors</p>
+    <ul>
+      <% @book.authors.each do |author| %>
+        <li><%= author.name %></li>
+      <% end %>
+    </ul>
+  <% end %>
+
+</p>
+
+<%= link_to 'Edit', edit_book_path(@book) %> |
+<%= link_to 'Back', books_path %>
